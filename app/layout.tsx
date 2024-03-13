@@ -1,4 +1,4 @@
-import { Figtree } from "next/font/google";
+import { Figtree, Plaster } from "next/font/google";
 
 import getSongsByUserId from "@/actions/getSongsByUserId";
 //import getActiveProductsWithPrices from '@/actions/getActiveProductsWithPrices'
@@ -10,6 +10,7 @@ import SupabaseProvider from "@/providers/SupabaseProvider";
 //import Player from '@/components/Player'
 
 import "./globals.css";
+import Player from "@/components/Player";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -36,7 +37,7 @@ export default async function RootLayout({
           <UserProvider>
             <ModalProvider />
             <Sidebar songs={userSongs}>{children}</Sidebar>
-            {/* <Player /> */}
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
